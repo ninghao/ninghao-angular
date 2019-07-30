@@ -1,1 +1,8 @@
 <p>post works!</p>
+<h3>{{ title }}</h3>
+<ul>
+  <li *ngFor="let entity of entities">
+    <h4>{{ entity.title }}</h4>
+    <p *ngIf="entity.body">{{ entity.body }}</p>
+  </li>
+</ul>
