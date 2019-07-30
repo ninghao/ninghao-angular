@@ -1,10 +1,13 @@
 <p>post works!</p>
 <h3>{{ title }}</h3>
 <ul>
-  <li *ngFor="let entity of entities">
+  <li *ngFor="let entity of entities; index as i">
     <h4>
       <a [title]="entity.title" [textContent]="entity.title"></a>
     </h4>
     <p *ngIf="entity.body">{{ entity.body }}</p>
+    <p>
+      <button (click)="removeItem(i)">Remove</button>
+    </p>
   </li>
 </ul>
