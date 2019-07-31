@@ -1,6 +1,10 @@
 <li>
   <h4>
-    <a [title]="entity.title" [textContent]="entity.title"></a>
+    <a
+      [routerLink]="['/posts', entity.id]"
+      [title]="entity.title"
+      [textContent]="entity.title"
+    ></a>
   </h4>
   <p *ngIf="entity.body">{{ entity.body }}</p>
   <p>
