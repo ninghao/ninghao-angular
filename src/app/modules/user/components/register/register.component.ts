@@ -11,5 +11,11 @@ export class RegisterComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.username.valueChanges.subscribe(value => {
+      console.log('Username: ', value);
+    });
+
+    this.username.setValue('bruce_wang');
+  }
 }
