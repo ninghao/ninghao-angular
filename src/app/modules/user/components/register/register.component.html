@@ -1,4 +1,10 @@
-<label>
-  <p>Username: {{ username.value }}</p>
-  <input type="text" [formControl]="username" />
-</label>
+<form [formGroup]="registerForm">
+  <label>
+    <p>Username</p>
+    <input type="text" formControlName="username" />
+  </label>
+  <label>
+    <p>Password</p>
+    <input type="password" formControlName="password" />
+  </label>
+</form>
