@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,15 +12,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  registerForm = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6),
-    ]),
+  // registerForm = new FormGroup({
+  //   username: new FormControl('', Validators.required),
+  //   password: new FormControl('', [
+  //     Validators.required,
+  //     Validators.minLength(6),
+  //   ]),
+  // });
+
+  registerForm = this.formBuilder.group({
+    username: ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength]],
   });
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.registerForm.valueChanges.subscribe(value => {
