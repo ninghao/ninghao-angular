@@ -22,3 +22,30 @@ a {
 .container {
   padding: 32px;
 }
+
+input[type='text'],
+input[type='password'] {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+button[type='submit'] {
+  border: none;
+  background: #000;
+  color: #fff;
+  padding: 10px 24px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
