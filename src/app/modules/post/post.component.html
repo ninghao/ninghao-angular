@@ -1,8 +1,8 @@
-<h3>{{ title }}</h3>
-<ul>
+<h3 class="title">{{ title }}</h3>
+<div class="list">
   <app-post-item
     *ngFor="let entity of entities"
     [entity]="entity"
     (remove)="removeItem($event)"
   ></app-post-item>
-</ul>
+</div>

@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.list__item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.title {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+}
+
+.container {
+  padding: 32px;
+}
