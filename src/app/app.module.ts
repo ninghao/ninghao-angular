@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, PageNotFoundComponent],
-  imports: [BrowserModule, AppRoutingModule, PostModule, UserModule],
+  imports: [BrowserModule, PostModule, UserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
