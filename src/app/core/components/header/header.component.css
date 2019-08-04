@@ -24,3 +24,7 @@ nav a {
 nav:nth-child(2) {
   flex-grow: 2;
 }
+
+nav a.active {
+  color: #000;
+}
