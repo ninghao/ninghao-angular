@@ -26,7 +26,7 @@ export class PostDetailsComponent implements OnInit {
     });
   }
 
-  gotoPosts() {
-    this.router.navigate(['/posts']);
+  gotoPosts(entity: Post) {
+    this.router.navigate(['/posts', { id: entity.id }]);
   }
 }

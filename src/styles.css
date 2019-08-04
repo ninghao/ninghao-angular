@@ -11,7 +11,7 @@ a {
 
 .list__item {
   border-bottom: 1px solid #eee;
-  padding-bottom: 8px;
+  padding: 16px;
 }
 
 .title {
@@ -48,4 +48,8 @@ button[type='submit'] {
 
 input.ng-invalid.ng-touched {
   border: 1px solid red;
+}
+
+.selected .list__item {
+  background: #f8f8f8;
 }

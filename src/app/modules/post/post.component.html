@@ -4,5 +4,6 @@
     *ngFor="let entity of entities"
     [entity]="entity"
     (remove)="removeItem($event)"
+    [class.selected]="entity.id === selectedId"
   ></app-post-item>
 </div>
