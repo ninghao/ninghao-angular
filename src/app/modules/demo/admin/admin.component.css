@@ -1,0 +1,16 @@
+nav {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 32px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 12px 16px;
+  margin-bottom: -1px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+nav a.active {
+  color: #000;
+  border-bottom: 1px solid #000;
+}

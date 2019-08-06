@@ -22,4 +22,5 @@
 
 .content {
   padding-left: 32px;
+  flex-grow: 2;
 }
