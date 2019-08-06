@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { PostComponent } from '../post/post.component';
+import { CanDeactivateGuard } from './admin/can-deactivate.guard';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
         component: AdminComponent,
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
+        canDeactivate: [CanDeactivateGuard],
         children: [
           {
             path: 'dashboard',
