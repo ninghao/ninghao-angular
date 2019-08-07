@@ -10,6 +10,11 @@ const routes: Routes = [
     redirectTo: '/posts',
     pathMatch: 'full',
   },
+  {
+    path: 'demo',
+    loadChildren: () =>
+      import('./modules/demo/demo.module').then(module => module.DemoModule),
+  },
   { path: '**', component: PageNotFoundComponent },
   {
     path: 'message',

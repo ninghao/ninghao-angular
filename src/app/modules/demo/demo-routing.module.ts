@@ -11,7 +11,7 @@ import { CanDeactivateGuard } from './admin/can-deactivate.guard';
 
 const routes: Routes = [
   {
-    path: 'demo',
+    path: '',
     component: DemoComponent,
     children: [
       {
