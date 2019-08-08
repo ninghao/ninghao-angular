@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-observable-demo',
@@ -7,12 +7,14 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./observable-demo.component.css'],
 })
 export class ObservableDemoComponent implements OnInit {
-  demoObservable: Observable<string>;
+  demoObservable: Observable<any>;
+  demoSubscription: Subscription;
 
   constructor() {}
 
   ngOnInit() {
-    this.demoObservable = of('hello', 'hola', '您好');
+    // this.demoObservable = of('hello', 'hola', '您好');
+    this.demoObservable = interval(1000);
   }
 
   onClick() {
@@ -21,6 +23,10 @@ export class ObservableDemoComponent implements OnInit {
       error: error => console.log(error),
       complete: () => console.log('Demo observable completed.'),
     };
-    this.demoObservable.subscribe(observer);
+    this.demoSubscription = this.demoObservable.subscribe(observer);
+  }
+
+  unsubscribe() {
+    this.demoSubscription.unsubscribe();
   }
 }
