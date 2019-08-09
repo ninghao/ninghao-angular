@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Post } from '../models/post.model';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +13,14 @@ export class PostService {
   constructor(private http: HttpClient) {}
 
   index() {
-    return this.http.get(this.postsApi);
+    return this.http.get(this.postsApi).pipe(catchError(this.handleError));
   }
 
   show(id: number) {
     return this.http.get<Post>(`${this.postsApi}/${id}`);
+  }
+
+  handleError(error: HttpErrorResponse) {
+    return throwError('Something went wrong.');
   }
 }
