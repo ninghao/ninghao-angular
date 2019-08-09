@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,13 @@ import { MessageBoxComponent } from './core/components/message-box/message-box.c
     PageNotFoundComponent,
     MessageBoxComponent,
   ],
-  imports: [BrowserModule, PostModule, UserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    PostModule,
+    UserModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
