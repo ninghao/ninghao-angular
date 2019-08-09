@@ -13,13 +13,19 @@ export class PostComponent implements OnInit {
   entities: Post[];
   selectedId: number;
 
-  constructor(private postService: PostService, private route: ActivatedRoute) {
-    this.entities = this.postService.index();
-  }
+  constructor(
+    private postService: PostService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.selectedId = +params.get('id');
+    });
+
+    const entities$ = this.postService.index();
+    entities$.subscribe((data: Post[]) => {
+      this.entities = data;
     });
   }
 

@@ -6,6 +6,7 @@
       [textContent]="entity.title"
     ></a>
   </h4>
+  <img [src]="entity.image" [alt]="entity.title" />
   <p *ngIf="entity.body">{{ entity.body }}</p>
   <p>
     <button (click)="onClick(entity)">Remove</button>
