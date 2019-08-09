@@ -23,8 +23,10 @@ export class ObservableDemoComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log('ngOnDestroy: Unsubscribe demo observable.');
-    this.demoSubscription.unsubscribe();
+    if (this.demoSubscription) {
+      console.log('ngOnDestroy: Unsubscribe demo observable.');
+      this.demoSubscription.unsubscribe();
+    }
   }
 
   onClick() {
