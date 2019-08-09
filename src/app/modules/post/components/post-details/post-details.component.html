@@ -1,3 +1,4 @@
 <h2>{{ entity.title }}</h2>
+<img [src]="entity.image" [alt]="entity.title" />
 <p *ngIf="entity.body">{{ entity.body }}</p>
 <button (click)="gotoPosts(entity)">Back</button>
