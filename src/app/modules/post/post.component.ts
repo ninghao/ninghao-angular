@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from './models/post.model';
 import { PostService } from './services/post.service';
 import { ActivatedRoute } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-post',
@@ -24,9 +25,13 @@ export class PostComponent implements OnInit {
     });
 
     const entities$ = this.postService.index();
-    entities$.subscribe((data: Post[]) => {
-      this.entities = data;
-    });
+    const observer = {
+      next: (data: Post[]) => {
+        this.entities = data;
+      },
+      error: (error: HttpErrorResponse) => console.log(error),
+    };
+    entities$.subscribe(observer);
   }
 
   removeItem(item: Post) {
