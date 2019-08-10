@@ -2,4 +2,5 @@
 <div *ngFor="let entity of entities">
   <h4>{{ entity.title }}</h4>
   <img [src]="entity.image" [alt]="entity.title" />
+  <p><button (click)="removeItemFromList(entity.id)">Remove</button></p>
 </div>

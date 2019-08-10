@@ -41,4 +41,8 @@ export class PostService {
   getMyList() {
     return this.http.get<Post[]>(this.myListApi);
   }
+
+  removeItemFromList(entityId: number) {
+    return this.http.delete(`${this.myListApi}/${entityId}`);
+  }
 }

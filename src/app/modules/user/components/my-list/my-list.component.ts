@@ -15,4 +15,10 @@ export class MyListComponent implements OnInit {
   ngOnInit() {
     this.postService.getMyList().subscribe(data => (this.entities = data));
   }
+
+  removeItemFromList(entityId: number) {
+    this.postService.removeItemFromList(entityId).subscribe(() => {
+      this.entities = this.entities.filter(item => item.id !== entityId);
+    });
+  }
 }
