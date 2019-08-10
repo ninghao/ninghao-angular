@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../../models/post.model';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-post-item',
@@ -13,11 +14,15 @@ export class PostItemComponent implements OnInit {
   @Output()
   remove = new EventEmitter();
 
-  constructor() {}
+  constructor(private postService: PostService) {}
 
   ngOnInit() {}
 
   onClick(entity: Post) {
     this.remove.emit(entity);
+  }
+
+  addToList(entity: Post) {
+    this.postService.addToList(entity).subscribe();
   }
 }

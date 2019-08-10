@@ -9,6 +9,7 @@
   <img [src]="entity.image" [alt]="entity.title" />
   <p *ngIf="entity.body">{{ entity.body }}</p>
   <p>
+    <button (click)="addToList(entity)">Add to List</button>
     <button (click)="onClick(entity)">Remove</button>
   </p>
 </div>
