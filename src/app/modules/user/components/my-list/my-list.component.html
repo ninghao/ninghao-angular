@@ -1,0 +1,5 @@
+<h3 class="title">My List</h3>
+<div *ngFor="let entity of entities">
+  <h4>{{ entity.title }}</h4>
+  <img [src]="entity.image" [alt]="entity.title" />
+</div>

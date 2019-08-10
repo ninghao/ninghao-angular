@@ -37,4 +37,8 @@ export class PostService {
   addToList(entity: Post) {
     return this.http.post<Post>(this.myListApi, entity);
   }
+
+  getMyList() {
+    return this.http.get<Post[]>(this.myListApi);
+  }
 }
