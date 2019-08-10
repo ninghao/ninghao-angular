@@ -24,7 +24,8 @@ a {
 }
 
 input[type='text'],
-input[type='password'] {
+input[type='password'],
+textarea {
   padding: 8px;
   width: 100%;
   max-width: 400px;
