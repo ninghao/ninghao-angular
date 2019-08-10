@@ -32,5 +32,8 @@ export class PostEditComponent implements OnInit {
 
   onSubmit() {
     console.log(this.postEditForm.value);
+    this.postService
+      .update(+this.route.snapshot.paramMap.get('id'), this.postEditForm.value)
+      .subscribe();
   }
 }
